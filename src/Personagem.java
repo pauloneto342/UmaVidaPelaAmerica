@@ -1,23 +1,15 @@
-public class Personagem {
-        String nome;
-        int nivelSatisfacao;
 
-        public Personagem(String nome, int nivelSatisfacao) {
-            this.nome = nome;
-            this.nivelSatisfacao = nivelSatisfacao;
-        }
 
-        public void aumentarSatisfacao(int quantidade) {
-            nivelSatisfacao += quantidade;
-            if (nivelSatisfacao > 100) {
-                nivelSatisfacao = 100; 
-            }
-        }
+class Personagem {
+    String nome;
+    int satisfacao;
 
-        public void diminuirSatisfacao(int quantidade) {
-            nivelSatisfacao -= quantidade;
-            if (nivelSatisfacao < 0) {
-                nivelSatisfacao = 0;
-            }
-        }
+    public Personagem(String nome, int satisfacao) {
+        this.nome = nome;
+        this.satisfacao = satisfacao;
     }
+
+    public void modificarSatisfacao(int delta) {
+        satisfacao += delta;
+    }
+}
