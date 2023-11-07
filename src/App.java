@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class App {
- 
- public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Personagem ana = new Personagem("Ana", 50);
@@ -61,20 +61,19 @@ public class App {
                     if (escolhaCap4 == 1) {
                         System.out.println("Fim da história. " + anderson.nome + " decidiu levar o carro à oficina e a aventura continua.");
                     } else {
-                         System.out.println("Fim da história. " + anderson.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                        System.out.println("Fim da história. " + anderson.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                    }
                 }
             }
-              } else {
+        } else {
             final1.mostrar();
-            int escolhaFinal1 = final1.escolher();
             ana.modificarSatisfacao(final1.getSatisfacaoChangeAna());
             anderson.modificarSatisfacao(final1.getSatisfacaoChangeAnderson());
             System.out.println(ana.nome + ": Nível de satisfação: " + ana.satisfacao);
             System.out.println(anderson.nome + ": Nível de satisfação: " + anderson.satisfacao);
-            System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                        System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
         }
 
         scanner.close();
     }
-}
 }
