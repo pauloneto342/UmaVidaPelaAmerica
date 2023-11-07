@@ -10,8 +10,8 @@ public class App {
         Personagem anderson = new Personagem("Anderson", 50);
 
         Capitulo cap1 = new Capitulo("Capítulo 1", "Bem-vindo à história de Ana e Anderson, um casal que pretende viver por toda a América. "
-                + "Aqui você deverá decidir o destino inicial dessa aventura.", "Ana e Anderson necessitam de um veículo, logo decidem economizar e pegar uma Vw Kombi 1986 que estava precisando de uma bela reforma.",
-                "Ana e Anderson necessitam de um veículo, logo optam por um veículo mais novo, para que não tenham dor de cabeça durante sua aventura.", ana, -20, scanner);
+                + "Aqui você deverá decidir o destino inicial dessa aventura.", "Ana e Anderson decidem economizar e pegar uma VW Kombi 1986 que precisa de uma reforma.",
+                "Ana e Anderson optam por um veículo mais novo para evitar problemas durante a viagem.", ana, 50, scanner);
 
         Capitulo cap2 = new Capitulo("Capítulo 2", "Eles encontraram uma Kombi que estava abandonada em um terreno, apesar de estar precisando urgentemente de uma revisão, aquele carro era o complemento para tornar toda sua aventura viável.",
                 "Decidiram então ir para casa, lá poderiam analisar com mais calma onde poderiam mandar o carro para uma reforma.",
@@ -26,39 +26,61 @@ public class App {
         Capitulo final1 = new Capitulo("Final 1", "Devido ao alto custo de um veículo mais novo, Ana e Anderson não conseguiram custear a montagem do motorhome!",
                 null, null, ana, -50, scanner);
 
-         
-        
+        Capitulo final2 = new Capitulo("Final 2", "A2 aventura de Ana e Anderson está prestes a começar. Eles partiram em sua Kombi reformada, cheios de entusiasmo e determinação.",
+                null, null, ana, 10, scanner);
+
+        // Início da história interativa
         cap1.mostrar();
-        int escolhaCap1 = cap1.escolher();
+        int escolhaCap1 = escolherOpcao(scanner);
+
+        ana.diminuirSatisfacao(cap1.alteracaoSatisfacao); 
+        System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
+        System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
 
         if (escolhaCap1 == 1) {
             cap2.mostrar();
-            int escolhaCap2 = cap2.escolher();
+            int escolhaCap2 = escolherOpcao(scanner);
+
+            ana.diminuirSatisfacao(cap2.alteracaoSatisfacao); 
+            System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
+            System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
 
             if (escolhaCap2 == 1) {
                 cap3.mostrar();
-                int escolhaCap3 = cap3.escolher();
+                int escolhaCap3 = escolherOpcao(scanner);
+
+                anderson.diminuirSatisfacao(cap3.alteracaoSatisfacao); 
+                System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
+                System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
 
                 if (escolhaCap3 == 1) {
-                    System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                    final1.mostrar();
                 } else {
                     cap4.mostrar();
-                    int escolhaCap4 = cap4.escolher();
+                    int escolhaCap4 = escolherOpcao(scanner);
+
+                    anderson.diminuirSatisfacao(cap4.alteracaoSatisfacao); 
+                    System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
+                    System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
+
                     if (escolhaCap4 == 1) {
-                        System.out.println("Fim da história. " + anderson.nome + " decidiu levar o carro à oficina e a aventura continua.");
-                    } else {
-                        System.out.println("Fim da história. " + anderson.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                        final2.mostrar();
                     }
                 }
-            } else {
-                System.out.println("Fim da história. " + ana.nome + " e " + anderson.nome + " escolheram sua kombi que agora poderá estar em segurança e agora aventura continua.");
             }
-        } else {
-            final1.mostrar();
-            System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
         }
 
-        
+        // Fechar o scanner
         scanner.close();
+    }
+
+    public static int escolherOpcao(Scanner scanner) {
+        int escolha = 0;
+        while (escolha != 1 && escolha != 2) {
+            System.out.print("Escolha 1 ou 2: ");
+            escolha = scanner.nextInt();
+            scanner.nextLine(); // Limpar o buffer
+        }
+        return escolha;
     }
 }
