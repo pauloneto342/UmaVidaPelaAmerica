@@ -10,14 +10,14 @@ public class Personagem {
         public void aumentarSatisfacao(int quantidade) {
             nivelSatisfacao += quantidade;
             if (nivelSatisfacao > 100) {
-                nivelSatisfacao = 100; // Limita o nível de satisfação a 100 (máximo)
+                nivelSatisfacao = 100; 
             }
         }
 
         public void diminuirSatisfacao(int quantidade) {
             nivelSatisfacao -= quantidade;
             if (nivelSatisfacao < 0) {
-                nivelSatisfacao = 0; // Limita o nível de satisfação a 0 (mínimo)
+                nivelSatisfacao = 0;
             }
         }
     }

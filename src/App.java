@@ -1,65 +1,64 @@
 import java.util.Scanner;
 
 public class App {
-    
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Personagem ana = new Personagem("Ana", 50); // Defina o nível de satisfação inicial
-        Personagem anderson = new Personagem("Anderson", 50); // Defina o nível de satisfação inicial
+        Personagem ana = new Personagem("Ana", 50);
+        Personagem anderson = new Personagem("Anderson", 50);
 
-        String cap1 = "Bem-vindo à história de Ana e Anderson, um casal que pretende viver por toda a América. "
-                + "Aqui você deverá decidir o destino inicial dessa aventura.";
+        Capitulo cap1 = new Capitulo("Capítulo 1", "Bem-vindo à história de Ana e Anderson, um casal que pretende viver por toda a América. "
+                + "Aqui você deverá decidir o destino inicial dessa aventura.", "Ana e Anderson necessitam de um veículo, logo decidem economizar e pegar uma Vw Kombi 1986 que estava precisando de uma bela reforma.",
+                "Ana e Anderson necessitam de um veículo, logo optam por um veículo mais novo, para que não tenham dor de cabeça durante sua aventura.", ana, -20, scanner);
 
-        System.out.println(cap1);
-        System.out.println("Qual das opções eles devem optar: ");
-        String esc1cap1 = "1 - Ana e Anderson necessitam de um veículo, logo decidem economizar e pegar uma Vw Kombi 1986 que estava precisando de uma bela reforma.";
-        String esc2cap1 = "2 - Ana e Anderson necessitam de um veículo, logo optam por um veículo mais novo, para que não tenham dor de cabeça durante sua aventura.";
+        Capitulo cap2 = new Capitulo("Capítulo 2", "Eles encontraram uma Kombi que estava abandonada em um terreno, apesar de estar precisando urgentemente de uma revisão, aquele carro era o complemento para tornar toda sua aventura viável.",
+                "Decidiram então ir para casa, lá poderiam analisar com mais calma onde poderiam mandar o carro para uma reforma.",
+                "Decidiram então levar o carro à oficina mais próxima, antes que ele parasse de funcionar no meio da rua.", ana, 0, scanner);
 
-        System.out.println(esc1cap1);
-        System.out.println(esc2cap1);
+        Capitulo cap3 = new Capitulo("Capítulo 3", "Tentar trazer um carro que estava parado por anos rodando até sua casa não foi uma boa ideia, o carro quebrou e fez com que gastassem mais com um guincho, trazendo gastos que não estavam planejados para aquele momento.",
+                null, null, anderson, -30, scanner);
 
-        int EscUser = scanner.nextInt();
+        Capitulo cap4 = new Capitulo("Capítulo 4", "Levar o carro imediatamente à oficina foi a melhor escolha que fizeram, visto que logo após a revisão o carro poderia chegar em casa em segurança, sem trazer novos custos não planejados e que assim possam iniciar sua aventura.",
+                null, null, anderson, 20, scanner);
 
-        if (EscUser == 1) {
-            System.out.println("Eles encontraram uma Kombi que estava abandonada em um terreno, apesar de estar precisando urgentemente de uma revisão, aquele carro era o complemento para tornar toda sua aventura viável");
-            ana.diminuirSatisfacao(20); // Ana diminui o nível de satisfação nesta etapa
-            anderson.aumentarSatisfacao(10); // Anderson aumenta o nível de satisfação nesta etapa
+        Capitulo final1 = new Capitulo("Final 1", "Devido ao alto custo de um veículo mais novo, Ana e Anderson não conseguiram custear a montagem do motorhome!",
+                null, null, ana, -50, scanner);
 
-            System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
-            System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
+         
+        
+        cap1.mostrar();
+        int escolhaCap1 = cap1.escolher();
 
-            String cap2 = "Ao comprar a Kombi, já notaram diversos problemas mecânicos e estruturais, onde havia inclusive um buraco no assoalho do carro.";
-            System.out.println("Qual das opções eles devem optar: ");
-            String esc1cap2 = "1 - Decidiram então ir para casa, lá poderiam analisar com mais calma onde poderiam mandar o carro para uma reforma.";
-            String esc2cap2 = "2 - Decidiram então levar o carro à oficina mais próxima, antes que ele parasse de funcionar no meio da rua.";
+        if (escolhaCap1 == 1) {
+            cap2.mostrar();
+            int escolhaCap2 = cap2.escolher();
 
-            System.out.println(cap2);
-            System.out.println(esc1cap2);
-            System.out.println(esc2cap2);
+            if (escolhaCap2 == 1) {
+                cap3.mostrar();
+                int escolhaCap3 = cap3.escolher();
 
-            EscUser = scanner.nextInt();
-
-            if (EscUser == 1) {
-                System.out.println("Tentar trazer um carro que estava parado por anos rodando até sua casa não foi uma boa ideia, o carro quebrou e fez com que gastassem mais com um guincho, trazendo gastos que não estavam planejados para aquele momento.");
-                anderson.diminuirSatisfacao(100); // Anderson diminui o nível de satisfação nesta etapa
-            } else if (EscUser == 2) {
-                System.out.println("Levar o carro imediatamente à oficina foi a melhor escolha que fizeram, visto que logo após a revisão o carro poderia chegar em casa em segurança, sem trazer novos custos não planejados e que assim possam iniciar sua aventura.");
-                anderson.aumentarSatisfacao(20); // Anderson aumenta o nível de satisfação nesta etapa
+                if (escolhaCap3 == 1) {
+                    System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                } else {
+                    cap4.mostrar();
+                    int escolhaCap4 = cap4.escolher();
+                    if (escolhaCap4 == 1) {
+                        System.out.println("Fim da história. " + anderson.nome + " decidiu levar o carro à oficina e a aventura continua.");
+                    } else {
+                        System.out.println("Fim da história. " + anderson.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
+                    }
+                }
+            } else {
+                System.out.println("Fim da história. " + ana.nome + " e " + anderson.nome + " escolheram sua kombi que agora poderá estar em segurança e agora aventura continua.");
             }
-
-            System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
-            System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
-        } else if (EscUser == 2) {
-            System.out.println("Devido ao alto custo de um veículo mais novo, Ana e Anderson não conseguiram custear a montagem do motorhome!");
-            System.out.println("O que levaria ao fim tão pr2ecoce dessa história.");
-            ana.diminuirSatisfacao(100); // Ana diminui o nível de satisfação nesta etapa
-
-            System.out.println("Nível de satisfação de Ana: " + ana.nivelSatisfacao);
-            System.out.println("Nível de satisfação de Anderson: " + anderson.nivelSatisfacao);
+        } else {
+            final1.mostrar();
+            System.out.println("Fim da história. " + ana.nome + " ficou com baixo nível de satisfação e a aventura acabou.");
         }
 
+        
         scanner.close();
     }
 }
