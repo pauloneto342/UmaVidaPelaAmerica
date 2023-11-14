@@ -3,19 +3,17 @@ import java.util.Scanner;
 class Capitulo {
     String titulo;
     String descricao;
-    String opcao1;
-    String opcao2;
+    String[] escolhas;  
     Personagem personagemAna;
     int satisfacaoChangeAna;
     Personagem personagemAnderson;
     int satisfacaoChangeAnderson;
     Scanner scanner;
 
-    public Capitulo(String titulo, String descricao, String opcao1, String opcao2, Personagem personagemAna, int satisfacaoChangeAna, Personagem personagemAnderson, int satisfacaoChangeAnderson, Scanner scanner) {
+    public Capitulo(String titulo, String descricao, String[] escolhas, Personagem personagemAna, int satisfacaoChangeAna, Personagem personagemAnderson, int satisfacaoChangeAnderson, Scanner scanner) {
         this.titulo = titulo;
         this.descricao = descricao;
-        this.opcao1 = opcao1;
-        this.opcao2 = opcao2;
+        this.escolhas = escolhas;
         this.personagemAna = personagemAna;
         this.satisfacaoChangeAna = satisfacaoChangeAna;
         this.personagemAnderson = personagemAnderson;
@@ -26,13 +24,24 @@ class Capitulo {
     public void mostrar() {
         System.out.println(titulo);
         System.out.println(descricao);
-        System.out.println("Escolha 1: " + opcao1);
-        System.out.println("Escolha 2: " + opcao2);
+        
+        
+        for (int i = 0; i < escolhas.length; i++) {
+            System.out.println("Escolha " + (i + 1) + ": " + escolhas[i]);
+        }
     }
 
     public int escolher() {
-        int escolha = scanner.nextInt();
-        return escolha;
+        int escolha;
+        
+       
+        do {
+            System.out.print("Digite o número da sua escolha: ");
+            escolha = scanner.nextInt();
+        } while (escolha < 1 || escolha > escolhas.length);
+
+
+        return escolha - 1;
     }
 
     public int getSatisfacaoChangeAna() {
