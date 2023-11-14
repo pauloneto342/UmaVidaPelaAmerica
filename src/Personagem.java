@@ -1,5 +1,4 @@
 
-
 class Personagem {
     String nome;
     int satisfacao;
