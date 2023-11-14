@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Capitulo {
     String titulo;
     String descricao;
-    String[] escolhas;
+    String[] escolhas;  // Array of choices
     Personagem personagemAna;
     int satisfacaoChangeAna;
     Personagem personagemAnderson;
@@ -25,9 +25,7 @@ class Capitulo {
         System.out.println(titulo);
         System.out.println(descricao);
         
-
         // Display choices
-
         for (int i = 0; i < escolhas.length; i++) {
             System.out.println("Escolha " + (i + 1) + ": " + escolhas[i]);
         }
