@@ -1,5 +1,3 @@
-
-
 class Personagem {
     String nome;
     int satisfacao;
@@ -9,7 +7,7 @@ class Personagem {
         this.satisfacao = satisfacao;
     }
 
-    public void modificarSatisfacao(int delta) {
-        satisfacao += delta;
+    public void modificarSatisfacao(int modificacao) {
+        this.satisfacao += modificacao;
     }
 }
