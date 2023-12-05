@@ -34,11 +34,8 @@ public class App {
         };
         cap2.adicionarEscolhas(escolhasCap2);
 
-
-        
         Capitulo raiz = cap1;
 
-       
         raiz.executar();
 
         scanner.close();
