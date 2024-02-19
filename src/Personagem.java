@@ -7,6 +7,7 @@ class Personagem {
         this.satisfacao = satisfacao;
     }
 
+    @SuppressWarnings("unused")
     private void modificarSatisfacao(int modificacao) {
         this.satisfacao += modificacao;
     }

@@ -1,0 +1,7 @@
+PERSONAGEM
+Ana
+50
+
+PERSONAGEM
+Anderson
+50

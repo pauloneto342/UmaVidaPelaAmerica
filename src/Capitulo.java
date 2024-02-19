@@ -1,10 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class Capitulo {
 
     private String titulo;
     private String descricao;
-    private Escolha[] escolhas;
+    private ArrayList<Escolha> escolhas;
     private Personagem personagemAna;
     private int satisfacaoChangeAna;
     private Personagem personagemAnderson;
@@ -19,29 +20,40 @@ class Capitulo {
         this.personagemAnderson = personagemAnderson;
         this.satisfacaoChangeAnderson = satisfacaoChangeAnderson;
         this.scanner = scanner;
+        this.escolhas = new ArrayList<Escolha>();
     }
 
-    void adicionarEscolhas(Escolha[] escolhas) {
-        this.escolhas = escolhas;
+    void adicionarEscolhas(Escolha escolha) {
+        this.escolhas.add(escolha);
     }
 
-    private void mostrar() {
+    protected void mostrar() {
         System.out.println(titulo);
         System.out.println(descricao);
-        for (int i = 0; i < escolhas.length; i++) {
-            System.out.println("Escolha " + (i + 1) + ": " + escolhas[i].getTexto());
+        
+        try{
+        	for (int i = 0; i < escolhas.size(); i++) {
+                System.out.println("Escolha " + (i + 1) + ": " + escolhas.get(i).getTexto());
+        	}
+        
+        }catch (Exception e)
+        {
+        	System.out.println("Nenhuma escolha adicionada ao capitulo ");
         }
+        	
     }
-
+        
     private int escolher() {
         int escolha = scanner.nextInt();
         return escolha - 1;
     }
 
+    @SuppressWarnings("unused")
     private int getSatisfacaoChangeAna() {
         return satisfacaoChangeAna;
     }
 
+    @SuppressWarnings("unused")
     private int getSatisfacaoChangeAnderson() {
         return satisfacaoChangeAnderson;
     }
@@ -50,11 +62,10 @@ class Capitulo {
         mostrar();
         int escolha = escolher();
         
-        if (escolha >= 0 && escolha < escolhas.length) {
-            Escolha escolhaSelecionada = escolhas[escolha];
+        if (escolha >= 0 && escolha < escolhas.size()) {
+            Escolha escolhaSelecionada = escolhas.get(escolha);
             escolhaSelecionada.getProximo().executar();
             
-           
             System.out.println("Satisfação de " + personagemAna.getNome() + ": " + personagemAna.getSatisfacao());
             System.out.println("Satisfação de " + personagemAnderson.getNome() + ": " + personagemAnderson.getSatisfacao());
         } else {

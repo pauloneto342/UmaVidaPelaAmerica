@@ -1,0 +1,79 @@
+CAPITULO
+cap1
+Capítulo 1
+Bem-vindo a historia de Ana e Anderson, um casal que pretende viver por toda a America.Aqui você devera decidir o destino inicial dessa aventura.
+Ana
+-20
+Anderson
+-10
+
+CAPITULO_IMAGEM
+cap2
+Capítulo 2
+Eles encontraram uma Kombi que estava abandonada em um terreno, apesar de estar precisando urgentemente de uma revisao, aquele carro era o complemento para tornar toda sua aventura viavel.
+Ana
+0
+Anderson
+-5
+IMAGEM_INICIO
+                                                                      
+                                                                  ...                               
+                                                                 :   ..                             
+                                                                :    ..                             
+                                                         .....::     :.....+=.                      
+                                 ..........................:::-::::::=-=-:=+*=....                  
+                           ......                     .:.....-.:.  .:-:...=-::=.:.--                
+                         ..                            .::::--::.:---:::-:..::.-.= =.               
+                       :+--::::::=--::::::-:-::::==.-:::.:.-....:.-    ::   :: . ::::               
+                    ..--..   ..-:-:.      . .  ..:: = .. : =     - :   :.:  .- . .- =               
+                 ... .-..  .-::.--::......::... . : = ...::.   ..: :    ::   :-  :-:.-.             
+                :.. .-..  ..   .-: .     ..:......:.-   .::   :.  - .   :....:.::.... :             
+                   .--.:..    .-:.  .. ..  .. : .: -:   .-. ... . : :.... .....       :             
+                   :-......   -- : . :. ::... :. : =: .:.-. .:..:..  .....            :             
+                  :  ....:===- ---.:.........-.... :::..::...   ...:                  :             
+                  :          ..............       .        ....     .                 :             
+                  =                               .  .....          .                 :             
+                  ::     .=-*=-                  .-..               .             .----             
+                  : :   :* .+ :*             ...  :                 .            * +--..            
+                  : ..  *. ==  *:        ...      :                 .           :+=*.               
+                .::: .  =*-+==.#      ...        ..                 .         ::.:-.                
+                : :.. :  ==*--#:    ..   ...     .              .:.        ..                       
+                .  ::  :   ..    ..   .-:...::.  :           .:-=:..    ...                         
+                 .-:    :       :     =      .=  :          ::.--= :  ..                            
+                  -      :     :      :.     .=  :         .-  .++.-.                               
+                .:*      ..   :         ......   :         =:  :*-                                  
+               :  =+-     :  ..                  ..       :=:..-=.                                  
+               ..   .----: :.:                    .    .::-:----.                                   
+                 ..       .::::......          ...-::..   --::.                                     
+                    ...               ........          ...                                         
+                        .......                     ....                                            
+                                ...................   
+
+IMAGEM_FIM
+
+CAPITULO
+cap3
+Capítulo 3
+Tentar trazer um carro que estava parado por anos rodando ate sua casa nao foi uma boa ideia, o carro quebrou e fez com que gastassem mais com um guincho, trazendo gastos que nao estavam planejados para aquele momento.
+Anderson
+-30
+Ana
+-10
+
+CAPITULO
+cap4
+Capítulo 4
+Levar o carro imediatamente a oficina foi a melhor escolha que fizeram, visto que logo apos a revisao o carro poderia chegar em casa em segurança, sem trazer novos custos nao planejados e que assim possam iniciar sua aventura.
+Anderson
+20
+Ana
+10
+
+CAPITULO
+final1
+Final 1
+Devido ao alto custo de um veiculo mais novo, Ana e Anderson nao conseguiram custear a montagem do motorhome!
+Ana
+-50
+Anderson
+-30

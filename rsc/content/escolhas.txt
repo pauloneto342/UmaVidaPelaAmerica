@@ -1,0 +1,19 @@
+ESCOLHA
+cap1
+Ana e Anderson necessitam de um veiculo, logo decidem economizar e pegar uma Vw Kombi 1986 que estava precisando de uma bela reforma.
+cap2
+
+ESCOLHA
+cap1
+Ana e Anderson necessitam de um veiculo, logo optam por um veiculo mais novo, para que nao tenham dor de cabeça durante sua aventura.
+final1
+
+ESCOLHA
+cap2
+Decidiram então ir para casa, lá poderiam analisar com mais calma onde poderiam mandar o carro para uma reforma.
+cap3
+
+ESCOLHA
+cap2
+Decidiram então levar o carro à oficina mais próxima, antes que ele parasse de funcionar no meio da rua.
+cap4
